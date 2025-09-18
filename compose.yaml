@@ -1,0 +1,11 @@
+services:
+  web:
+    build: ./web
+    ports:
+      - "8000:5000"
+    depends_on:
+      - cow-service
+  
+  cow-service:
+    build: ./cow
+    # No external port needed - only internal communication
